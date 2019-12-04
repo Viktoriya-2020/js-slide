@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>slides2</title>
+<link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+<style>
+body{
+    margin:0;
+	background:#e4f1f7;
+}
+div>img{
+height:100%;
+width:100%;	
+}
+
+.im{
+margin:30px;
+height:80px;
+width:120px;
+}
+.but{
+  position:absolute;
+  top:200px;
+  background: #333;
+  color: #fff;
+  border: none;
+  padding: 20px 0px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid #fff;
+  z-index: 3;
+  width: 70px;
+  }
+  #prev{
+  left:25%;
+  }
+	#next{
+  left:70%;
+  }
+  .kk{
+  position:absolute;
+  top:200px;
+  background:#9fa2a5;
+  color: #fff;
+  border: none;
+  padding: 20px 0px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid grey;
+  z-index: 3;
+  width: 70px;
+  }
+  .h1{
+  width:170px;
+  height:100px;
+  position:relative;
+  margin:10px;
+  float:left;
+  
+}
+.h2{
+	width:170px;
+  height:100px;
+  position:relative;
+  margin:10px;
+  float:left;
+	opacity:1;
+	border:3px solid white;
+}
+#hh{
+    width:70%;
+	height:100px;
+	position:relative;
+	top:10px;
+	left:22%;
+	
+}
+</style>
+</head>
+<body>
+
+<div id="k1" style="height:450px;width:700px;border:double;position:relative;margin:10px auto;overflow:hidden;">
+<img src="" id="slide">
+</div>
+<div id="hh"></div>
+<button id="next" class="kk" onclick="f1()">>></button>
+<button id="prev" class="kk" onclick="f2()"><<</button>
+<script>
+var arr=['1.jpg','2.jpg','3.jpg','4.jpg']
+document.getElementById('slide').src=arr[0];
+for(var i=0;i<arr.length;i++){
+
+	k1.innerHTML+="<img src='"+arr[i]+"' style='height:100%;width:100%;position:absolute;'>"
+	hh.innerHTML+="<div class='h1'><img class='h3'src='"+arr[i]+"' style='height:100%;width:100%;;position:absolute' onclick='f5(this)'></div>"
+	
+}
+document.getElementById('slide').src=arr[0];
+
+var tiv=1
+function f1(){
+var l=document.getElementsByClassName('h3')
+	tiv++
+	//l[tiv-1].className="h2"
+	if(tiv==5){
+		tiv=1
+	}
+	k1.innerHTML="<img src='"+tiv+".jpg'>"
+for(i=0;i<l.length;i++){
+	l[i].style.opacity=0.4
+}
+l[tiv-1].style.opacity=1
+}
+function f2(){
+tiv--
+	if(tiv==0){
+		tiv=4
+	}
+	k1.innerHTML="<img src='"+tiv+".jpg'>"
+}	
+	
+//var pic=document.getElementsByClassName('h3')
+function f5(obj){
+var l=document.getElementsByClassName('h3')
+k1.innerHTML="<img src='"+obj.src+"'>"
+for(i=0;i<l.length;i++){
+l[i].style.border="none"
+	}
+	obj.style.border="2px solid white"
+	/*obj.className=("h3")
+	}*/
+}
+
+
+
+</script>
+</body> 
+</html>
